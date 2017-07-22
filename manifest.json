@@ -1,6 +1,6 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "National Food Today",
+  "short_name": "National Food Today",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
