@@ -28,5 +28,6 @@
 		}) %>
 		<script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
 		<script>window.fetch||document.write('<script src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"><\/script>')</script>
+		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 	</body>
 </html>
