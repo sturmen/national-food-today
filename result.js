@@ -1,18 +1,22 @@
 export const Result = ({ result }) => {
-	let tweetmessage = 'I\'m celebrating ' + result.scope + ' ' + result.food + ' ' + result.unit + '! Find out what day it is today.';
-	// let hashtag = result.food.replace(/\W/g, '').toLowerCase();
-	let googleSearchUrl = 'https://www.google.com/search?q=' + result.food.replace(/\W/g, '+').toLowerCase() + '+recipe';
+	const holidayName = '' + result.scope + ' ' + result.food + ' ' + result.unit;
+	let intro = 'Hi!';
+	if (result.duration > 1) {
+		intro = 'This ' + result.unit.toLowerCase() + ' is ' + holidayName + '!';
+	}
+	else {
+		intro = 'Today is ' + holidayName + '!';
+	}
 	return (
 		<div class="result">
 			<div>
-				<h3>
-					Happy {result.scope} {result.food} {result.unit}!
-				</h3>
+				<h2>
+					Happy {holidayName}!
+				</h2>
 			</div>
-			<a href={googleSearchUrl}>Get a {result.food} recipe!</a>
-			<p>Tell the world you love it!</p>
+			<p>{intro} <a href={'https://www.google.com/search?q=' + result.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get a {result.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Twitter, Instagram, or Pinterest for a chance to be featured!</p>
 			<div align="right">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text={tweetmessage} data-url="https://nationalfood.today" data-hashtags="nationalfoodtoday" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8" />
+				<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text={'I\'m celebrating ' + result.scope + ' ' + result.food + ' ' + result.unit + '! Find out what day it is today.'} data-url="https://nationalfood.today" data-hashtags="nationalfoodtoday" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8" />
 			</div>
 		</div>
 	);
