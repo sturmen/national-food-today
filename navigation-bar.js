@@ -5,9 +5,7 @@ import Utils from './utils';
 export default class NavigationBar extends Component {
 
 	createPathFromDate = (val) =>  {
-		console.log(val.toISOString());
 		let newPath = Utils.dateToPathString(val);
-		console.log(newPath);
 		route(newPath);
 	}
 

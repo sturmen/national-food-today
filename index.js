@@ -1,5 +1,4 @@
 import './style';
-import { Component } from 'preact';
 import Router from 'preact-router';
 import { Feed } from './feed';
 import Redirect from './redirect';
