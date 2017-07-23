@@ -4,13 +4,13 @@ import Utils from './utils';
 
 export default class NavigationBar extends Component {
 
-	createPathFromDate = (val) =>  {
+	createPathFromDate = (val) => {
 		let newPath = Utils.dateToPathString(val);
 		route(newPath);
 	}
 
 	jumpDays = (days) => {
-		let targetDate =  this.props.date;
+		let targetDate = this.props.date;
 		targetDate.setDate(targetDate.getDate() + days);
 		this.createPathFromDate(targetDate);
 	}
@@ -24,8 +24,11 @@ export default class NavigationBar extends Component {
 	}
 
 	handleChange = (event) => {
-		let val = Utils.dateStringToLocalDate(event.target.value);
-		this.createPathFromDate(val);
+		let val = event.target.value;
+		if (val) {
+			let dateObject = Utils.dateStringToLocalDate(val);
+			this.createPathFromDate(dateObject);
+		}
 	}
 
 	handleSubmit = (event) => {
