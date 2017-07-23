@@ -1,10 +1,11 @@
 import { Component } from 'preact';
 import { route } from 'preact-router';
+import Utils from './utils';
 
 export default class Redirect extends Component {
 	componentWillMount() {
-		let currentDate = new Date();
-		route('/' + currentDate.getFullYear() + '/' + (currentDate.getMonth() + 1) + '/' + (currentDate.getDate()));
+		let pathString = Utils.dateToPathString(new Date());
+		route(pathString);
 	}
 
 	render() {

@@ -1,4 +1,4 @@
-export const HolidayCard = ({ holidayObj }) => {
+const HolidayCard = ({ holidayObj }) => {
 	const holidayName = '' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit;
 	let intro = 'Hi!';
 	if (holidayObj.duration > 1) {
@@ -21,3 +21,4 @@ export const HolidayCard = ({ holidayObj }) => {
 		</div>
 	);
 };
+export default HolidayCard;
