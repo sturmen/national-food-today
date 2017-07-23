@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { Result } from './result';
+import { HolidayCard } from './holiday-card';
 
 
 export default class HolidayList extends Component {
@@ -16,8 +16,8 @@ export default class HolidayList extends Component {
 		currentHolidays.sort((a, b) => a.duration - b.duration);
 		return (
 			<div class="list">
-				{currentHolidays.map(result => (
-					<Result result={result} />
+				{currentHolidays.map(holiday => (
+					<HolidayCard holidayObj={holiday} />
 				))}
 			</div>
 		);
