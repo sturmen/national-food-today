@@ -6,7 +6,6 @@ export const Feed = (props) => {
 	if (props.year && props.month && props.day) {
 		pathDate = new Date(props.year, props.month - 1, props.day);
 	}
-	console.log(pathDate);
 	return (
 		<div>
 			<NavigationBar date={pathDate} />
