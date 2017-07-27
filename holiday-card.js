@@ -10,7 +10,6 @@ const checkForVowel = function (input) {
 };
 
 const HolidayCard = ({ holidayObj }) => {
-	console.log(holidayObj);
 	const holidayName = '' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit;
 	let intro = 'Hi!';
 	if (holidayObj.duration > 1) {
@@ -30,7 +29,7 @@ const HolidayCard = ({ holidayObj }) => {
 			</div>
 			<p>{intro} <a href={'https://www.google.com/search?q=' + holidayObj.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get {checkForVowel(holidayObj.food)} {holidayObj.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Instagram, Twitter, or Pinterest for a chance to be featured!</p>
 			{holidayObj.pinterest_embed &&
-				<PinterestEmbed location={holidayObj.pinterest_embed} size="medium" />
+				<PinterestEmbed location={holidayObj.pinterest_embed} size="large" />
 			}
 			<div align="right">
 				<TweetButton msg={tweetMsg} />

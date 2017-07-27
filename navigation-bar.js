@@ -43,7 +43,7 @@ export default class NavigationBar extends Component {
 				</div>
 				<div>
 					<form onSubmit={this.handleSubmit}>
-						<label for="target-day">View date (MM/YYYY): </label><input id="target-date" type="date" value={props.date.toISOString().substring(0, 10)} onChange={this.handleChange} />
+						<label for="target-day">Jump To Date: </label><input id="target-date" type="date" value={props.date.toISOString().substring(0, 10)} onChange={this.handleChange} />
 					</form>
 				</div>
 				<div>
