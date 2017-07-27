@@ -1,3 +1,13 @@
+import TweetButton from './twitter-button';
+
+const checkForVowel = function (input) {
+	const vowels = ['a', 'e', 'i', 'o', 'u'];
+	if (vowels.includes(input.charAt(0).toLowerCase())) {
+		return 'an';
+	}
+	return 'a';
+};
+
 const HolidayCard = ({ holidayObj }) => {
 	const holidayName = '' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit;
 	let intro = 'Hi!';
@@ -7,6 +17,8 @@ const HolidayCard = ({ holidayObj }) => {
 	else {
 		intro = 'Today is ' + holidayName + '!';
 	}
+	let tweetMsg = 'I\'m celebrating ' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit + '! Find out what food holiday it is today!';
+
 	return (
 		<div class="holiday-card">
 			<div>
@@ -14,9 +26,9 @@ const HolidayCard = ({ holidayObj }) => {
 					Happy {holidayName}!
 				</h2>
 			</div>
-			<p>{intro} <a href={'https://www.google.com/search?q=' + holidayObj.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get a {holidayObj.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Twitter, Instagram, or Pinterest for a chance to be featured!</p>
+			<p>{intro} <a href={'https://www.google.com/search?q=' + holidayObj.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get {checkForVowel(holidayObj.food)} {holidayObj.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Instagram, Twitter, or Pinterest for a chance to be featured!</p>
 			<div align="right">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text={'I\'m celebrating ' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit + '! Find out what day it is today.'} data-url="https://nationalfood.today" data-hashtags="nationalfoodtoday" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8" />
+				<TweetButton msg={tweetMsg} />
 			</div>
 		</div>
 	);
