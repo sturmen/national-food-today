@@ -1,6 +1,6 @@
 {
   "name": "National Food Today",
-  "short_name": "National Food Today",
+  "short_name": "NtlFoodToday",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
