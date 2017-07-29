@@ -1,13 +1,13 @@
 import PinterestEmbed from './pinterest-embed';
 import TweetButton from './twitter-button';
 
-const checkForVowel = function (input) {
+function checkForVowel(input) {
 	const vowels = ['a', 'e', 'i', 'o', 'u'];
 	if (vowels.includes(input.charAt(0).toLowerCase())) {
 		return 'an';
 	}
 	return 'a';
-};
+}
 
 const HolidayCard = ({ holidayObj }) => {
 	const holidayName = '' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit;
