@@ -11,7 +11,13 @@ export default class HolidayList extends Component {
 			endDate.setDate(endDate.getDate() + durationDays);
 			return startDate <= currentDate && currentDate <= endDate;
 		});
-		currentHolidays.sort((a, b) => a.duration - b.duration);
+		currentHolidays.sort((a, b) => {
+			let diff = a.duration - b.duration;
+			if (diff === 0) {
+				diff = 1 - a.food.localeCompare(b.food);
+			}
+			return diff;
+		});
 		return (
 			<div class="list">
 				{currentHolidays.map(holiday => (
