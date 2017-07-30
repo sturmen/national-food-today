@@ -27,7 +27,7 @@ const HolidayCard = ({ holidayObj }) => {
 					Happy {holidayName}!
 				</h2>
 			</div>
-			<p><a href={'https://www.google.com/search?q=' + holidayObj.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get {checkForVowel(holidayObj.food)} {holidayObj.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Instagram, Twitter, or Pinterest for a chance to be featured!</p>
+			<p><a target="_blank" rel="noopener noreferrer" href={'https://www.google.com/search?q=' + holidayObj.food.replace(/\W/g, '+').toLowerCase() + '+recipe'}>Get {checkForVowel(holidayObj.food)} {holidayObj.food.toLowerCase()} recipe</a>, whip it up and then tell the world how much you love it. Post it with the hashtag <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/explore/tags/nationalfoodtoday/">#nationalfoodtoday</a> on Instagram, Twitter, or Pinterest for a chance to be featured!</p>
 			{holidayObj.pinterest_embed &&
 				<PinterestEmbed location={holidayObj.pinterest_embed} size="medium" />
 			}
