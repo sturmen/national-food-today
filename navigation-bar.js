@@ -36,6 +36,8 @@ export default class NavigationBar extends Component {
 	}
 
 	render(props, state) {
+		const dateString = props.date.getFullYear() + '-' + Utils.pad((props.date.getMonth() + 1), 2) + '-' + props.date.getDate();
+		console.log(dateString);
 		return (
 			<div id="navigation-bar-container">
 				<div>
@@ -43,7 +45,7 @@ export default class NavigationBar extends Component {
 				</div>
 				<div>
 					<form onSubmit={this.handleSubmit}>
-						<input id="target-date" type="date" value={props.date.toISOString().substring(0, 10)} onChange={this.handleChange} min={props.min} max={props.max} />
+						<input id="target-date" type="date" value={dateString} onChange={this.handleChange} min={props.min} max={props.max} />
 					</form>
 				</div>
 				<div>

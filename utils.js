@@ -12,4 +12,10 @@ export default class Utils {
 	static dateStringToLocalDate(dateString) {
 		return new Date(dateString + 'T00:00:00');
 	}
+
+	static pad(n, width, z) {
+		z = z || '0';
+		n = n + '';
+		return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+	}
 }
