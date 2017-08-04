@@ -37,7 +37,6 @@ export default class NavigationBar extends Component {
 
 	render(props, state) {
 		const dateString = props.date.getFullYear() + '-' + Utils.pad((props.date.getMonth() + 1), 2) + '-' + Utils.pad(props.date.getDate(), 2);
-		console.log(dateString);
 		return (
 			<div id="navigation-bar-container">
 				<div>
