@@ -10,14 +10,14 @@ function checkForVowel(input) {
 }
 
 const HolidayCard = ({ holidayObj }) => {
-	const holidayName = '' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit;
-	let intro = 'Hi!';
-	if (holidayObj.duration > 1) {
-		intro = 'This ' + holidayObj.unit.toLowerCase() + ' is ' + holidayName + '!';
-	}
-	else {
-		intro = 'Today is ' + holidayName + '!';
-	}
+	const holidayName = ('' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit).trim();
+	// let intro;
+	// if (holidayObj.duration > 1) {
+	// 	intro = 'This ' + holidayObj.unit.toLowerCase() + ' is ' + holidayName + '!';
+	// }
+	// else {
+	// 	intro = 'Today is ' + holidayName + '!';
+	// }
 	let tweetMsg = 'I\'m celebrating ' + holidayObj.scope + ' ' + holidayObj.food + ' ' + holidayObj.unit + '! Find out what food holiday it is today!';
 
 	return (
