@@ -6,7 +6,7 @@
   "scripts": {
     "test": "eslint . && preact test",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --template template.html",
+    "build": "preact build -p true --template template.html",
     "serve": "preact build --template template.html && preact serve",
     "dev": "preact watch --template template.html"
   },
@@ -17,14 +17,14 @@
     "extends": "eslint-config-synacor"
   },
   "devDependencies": {
-    "eslint": "^4.2.0",
-    "eslint-config-synacor": "^1.0.1",
+    "eslint": "^4.5.0",
+    "eslint-config-synacor": "^1.1.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^1.3.0"
+    "preact-cli": "^1.4.1"
   },
   "dependencies": {
     "preact": "^8.2.1",
-    "preact-compat": "^3.16.0",
-    "preact-router": "^2.5.5"
+    "preact-compat": "^3.17.0",
+    "preact-router": "^2.5.6"
   }
 }
