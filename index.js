@@ -10,7 +10,7 @@ const App = (props) => (
 		</div>
 		<Router>
 			<Feed path="/" data={jsonData} />
-			<Feed path="/:year/:month/:day" data={jsonData} />
+			<Feed path="/browse/:year/:month/:day" data={jsonData} />
 		</Router>
 		<p style="text-align: center;"><a href="mailto:admin@nationalfood.today">submissions/contact</a> | <a target="_blank" rel="noopener noreferrer" href="https://congressfor.me/">Check out my other site!</a></p>
 	</div>

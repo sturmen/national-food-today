@@ -1,7 +1,7 @@
 export default class Utils {
 	static dateToPathString(inputDate) {
 		let currentDate = new Date(inputDate.getTime() + 1000);
-		return '/' + currentDate.getFullYear() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getDate();
+		return '/browse/' + currentDate.getFullYear() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getDate();
 	}
 
 	/**
